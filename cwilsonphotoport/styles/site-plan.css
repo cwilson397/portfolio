@@ -6,14 +6,14 @@ Fonts are separated by a | */
 
 :root {
   /* change the values below to your colors from your palette */
-  --primary-color: #FC9E4F   ;
-  --secondary-color: #7C9885 ;
+  --primary-color: #FC9E4F;
+  --secondary-color: #7C9885;
   --accent1-color: #510D0A;
   --accent2-color: #362C28;
 
   /* change the values below to your chosen font(s) */
   --heading-font: 'Nunito', sans-serif;
-  --paragraph-font:' Titillium Web', sans-serif;;
+  --paragraph-font:' Titillium Web', sans-serif;
 
   /* these colors below should be chosen from among your palette colors above */
   --headline-color-on-white: #396E94;  /* headlines on a white background */ 
