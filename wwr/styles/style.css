@@ -280,5 +280,20 @@ h4 {
     footer {
         margin-top: 25px;
     }
+
+    .faq-img {
+        float: left;
+        margin-right: 20px;
+    }
+    
+    .faq-list {
+        font: Lato, Helvetica, sans-serif;
+    
+    }
+   
+    .faq-list-ans {
+        font-size: .8em;
+
+    }
 }
             
