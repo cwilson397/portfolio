@@ -17,6 +17,7 @@ header {
 .head-logo {
 
    width: 150px;
+   float: inline-start;
 
 }
 
