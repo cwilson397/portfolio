@@ -16,11 +16,17 @@ header {
 
 .head-logo {
 
-   width: 150px;
-   float: inline-start;
+    columns: 1;
+    width: 150px;
+    float: left;
 
 }
 
+#logo_link {
+    padding-top: 5px;
+    justify-self: center;
+    align-self: center;
+}
 
 nav {
     display: flex;
@@ -56,9 +62,10 @@ nav a:hover {
 
     border: 10px solid #510D0A;
     transition: transform .5s;
-    box-shadow: 5px 5px 10px #6f7364;
+    box-shadow: 2px 2px 2px #6f7364;
     width: 200px;
     float: inline-start;
+   
 
 
 }
@@ -66,19 +73,25 @@ nav a:hover {
 
 .card-p-1 {
 
+    padding: 12px;
     font-family: 'Titillium Web', sans-serif;
+    z-index: 1;
 
 }
 
 .card-p-2 {
 
+    padding: 12px;    
     font-family: 'Titillium Web', sans-serif;
+    z-index: 1;
 
 }
 
 .card-p-3 {
 
+    padding: 12px;
     font-family: 'Titillium Web', sans-serif;
+    z-index: 1;
 
 }
 
