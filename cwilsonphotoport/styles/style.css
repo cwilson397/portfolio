@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Titillium+Web:wght@200&display=swap');
+
+home-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+header {
+
+    background-color: #FC9E4F;
+    color: #d9c2a3;
+    display: grid;
+    grid-template-columns: 150px 1fr 1fr 1fr auto;
+}
+
+
+.head-logo {
+
+   width: 150px;
+
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+nav a {
+
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+    padding: 35px;
+}
+
+nav a:hover {
+    background-color: #396E94;
+    color: #d9c2a3;
+}
+
+.sitemap {
+
+    grid-column: 2/5;
+
+}
+
+.home-card {
+
+    margin: 200px 0;
+
+}
+
+.card-img {
+
+    border: 10px solid #2B4141;
+    transition: transform .5s;
+    box-shadow: 5px 5px 10px #6f7364;
+
+}
+
+
+.card-p-1 {
+
+    font-family: 'Titillium Web', sans-serif;
+
+}
+
+.card-p-2 {
+
+    font-family: 'Titillium Web', sans-serif;
+
+}
+
+.card-p-3 {
+
+    font-family: 'Titillium Web', sans-serif;
+
+}
+
+footer {
+    
+    background-color: #362C28;
+}
+
+.foot-box {
+
+}
+
+.foot-logo {
+
+    width: 200px;
+
+}
+
+.foot-sm {
+
+}
+
+.sm-link {
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size:  20px;   
+    color: whitesmoke; 
+    
+}
+
+.sm-img {
+
+    height: 20px;
+    width: 20px;
+
+}
+
+.crn {
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size:  20px;   
+    color: whitesmoke; 
+
+}
+
