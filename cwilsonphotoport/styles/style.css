@@ -9,14 +9,13 @@ header {
 
     background-color: #FC9E4F;
     color: #d9c2a3;
-    display: grid;
-    grid-template-columns: 150px 1fr 1fr 1fr auto;
+    display: flex;
 }
 
 
 .head-logo {
 
-    columns: 1;
+   
     width: 150px;
     float: left;
 
@@ -28,29 +27,29 @@ header {
     align-self: center;
 }
 
-nav {
-    display: flex;
-    justify-content: space-around;
+.sitemap {
+    
+    margin-left: 150px;
 }
-nav a {
+.sitemap a {
 
+    float: left;
     text-align: center;
     color: white;
     text-decoration: none;
-    padding-left: 10px;
-    padding: 35px;
+    padding-right:  16px;
+    padding-left: 16px;
+    padding-top: 30px;
+    font-size: 17px;
+
 }
 
-nav a:hover {
+.sitemap a:hover {
     background-color: #396E94;
     color: #d9c2a3;
 }
 
-.sitemap {
 
-    grid-column: 2/5;
-
-}
 
 .home-card {
 
