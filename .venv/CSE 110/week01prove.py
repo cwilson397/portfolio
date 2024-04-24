@@ -1,8 +1,11 @@
+###############################################
 # Programmer Name: Colby Wilson
 # week 01 prove: Favorite Color Hex code
 # date: 4/24/2024
-# defining main function
+# purpose: to take a user input and output the color and corresponding hex code
+###############################################
 
+# defining main function
 def main():
     # defines the color choices and hex code lists
     colors = ['red', 'yellow', 'blue', 'green', 'orange', 'purple', 'pink', 'brown', 'white', 'gray', 'cyan', 'magenta']
