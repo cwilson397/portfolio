@@ -1,5 +1,5 @@
 ########################################################
-# Programmer team: Back Right table(Ben, Austin, Colby)
+# Programmer team: Colby
 # ID card
 # 5/1/2024
 #########################################################
