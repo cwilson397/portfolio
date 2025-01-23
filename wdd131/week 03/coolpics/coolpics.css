@@ -1,0 +1,98 @@
+/* Importing google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+
+/* Global styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    background-color: #F8D7DA;
+    color: #333333;
+}
+
+h1 {
+    font-family: Mooli, sans-serif;
+    color: #E1D9F0;
+}
+
+h2 {
+    font-family: Mooli, sans-serif;
+    color: #444444;
+}
+
+a {
+    color: #f45b69;
+    text-decoration: none;
+}
+
+header {
+    background-color: #52489c;
+    color: #ebebeb;
+    padding: 1em;
+    text-align: center;
+    position: relative;
+}
+
+.menu-button {
+    display: none;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    background-color: #59c3c3;
+    color: #ebebeb;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+  
+nav {
+    display: flex;
+    gap: 1em;
+    justify-content: flex-start;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+nav a {
+    color: #ebebeb;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5em;
+}
+
+nav a:hover {
+    background-color: #f45b69; /* Adding hover effect */
+}
+
+/* Gallery styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create a 3x3 grid */
+    gap: 1em; /* Add space between images */
+    margin: 2em; /* Add some margin around the gallery */
+}
+
+.gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Ensures images fit without distortion */
+    border-radius: 8px; /* Optional: Adds rounded corners to the images */
+}
+
+/* Responsive styles */
+@media (max-width: 700px) {
+    .menu-button {
+        display: block; /* Make menu button visible on small screens */
+    }
+
+    nav {
+        display: none; /* Hide the menu by default */
+        flex-direction: column;
+        align-items: center; /* Center-align the links vertically */
+    }
+
+    .menu.visible {
+        display: flex; /* Show menu when .visible class is added */
+    }
+}
