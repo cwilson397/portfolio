@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F8F8F8; /* Light neutral background for better contrast */
+    color: #333; /* Dark text for readability */
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #ddd;
+    background-color: #474973; /* Deep purple for the header */
+    color: #fff; /* White text for contrast */
+}
+
+nav ul {
+    list-style-type: none;
+    padding-right: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #dfeeb8; /* Bright accent color for links */
+}
+
+nav ul li a:hover {
+    color: #7B9E89; /* Slightly muted green on hover */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    gap: 20px;
+}
+
+.review-meta {
+    min-width: 120px;
+    text-align: right;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.review-content img {
+    max-width: 100px;
+    display: block;
+}
+
+.sidebar {
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #7B9E89; /* Muted green background for sidebar */
+    color: #fff; /* White text for better contrast */
+}
+
+.sidebar a {
+    color: #C33149; /* Matching the accent color for sidebar links */
+}
+
+.sidebar a:hover {
+    color: #474973; /* Darker purple for hover effect */
+}
+
+.skiptocontent a {
+    position: absolute; /* Absolute positioning to move the link off-screen */
+    top: -40px; /* Move it off the screen */
+    left: 0;
+    background-color: #C33149; /* Bright color to stand out */
+    color: white; /* Text color */
+    padding: 10px;
+    font-weight: bold;
+    z-index: 1000; /* Ensure it is above other content */
+    text-decoration: none;
+}
+
+.skiptocontent a:focus {
+    top: 0; /* Bring the link back on screen when focused */
+}
