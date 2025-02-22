@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Credit Card Form</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <h1>Credit Card Payment</h1>
+  <div class="credit-card-wrapper">
+    <form action="#" method="POST" class="credit-card-form">
+      
+      <!-- Card container using grid with overlap -->
+      <div class="card-container">
+        <!-- CARD BACK -->
+        <div class="card-back">
+          <div class="magstripe"></div>
+          <!-- Bottom-left CVV text box -->
+          <div class="cvv-bottom">
+            <label for="cvv-bottom">CVV</label>
+            <input 
+              type="text" 
+              id="cvv-bottom" 
+              name="cvv-bottom" 
+              placeholder="xxx" 
+              required 
+              maxlength="3" 
+            />
+          </div>
+        </div>
+        <!-- CARD FRONT, shifted up -->
+        <div class="card-front">
+          <div class="total">
+            <span>TOTAL: $199</span>
+          </div>
+          <div class="card-icon">
+            <img
+              src="credit-card.png"
+              alt="Credit Card Icon"
+            />
+          </div>
+          <div class="card-field card-number">
+            <label for="card-number">CARD NUMBER</label>
+            <input 
+              type="text" 
+              id="card-number" 
+              name="card-number" 
+              placeholder="1234 5678 9101 1020" 
+              required 
+              maxlength="19" 
+            />
+          </div>
+          <!-- Container for Card Holder and Expiration on same line -->
+          <div class="card-holder-expiration">
+            <div class="card-field card-holder">
+              <label for="card-holder">CARD HOLDER</label>
+              <input 
+                type="text" 
+                id="card-holder" 
+                name="card-holder" 
+                placeholder="John Doe" 
+                required
+              />
+            </div>
+            <div class="card-field expiration">
+              <label>EXPIRATION</label>
+              <div class="exp-fields">
+                <input 
+                  type="text" 
+                  id="exp-mm" 
+                  name="exp-mm" 
+                  placeholder="MM" 
+                  required 
+                  maxlength="2" 
+                />
+                <input 
+                  type="text" 
+                  id="exp-yy" 
+                  name="exp-yy" 
+                  placeholder="YY" 
+                  required 
+                  maxlength="2" 
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Submit Button -->
+      <button type="submit">Submit Payment</button>
+    </form>
+  </div>
+</body>
+</html>
