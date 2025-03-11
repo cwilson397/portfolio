@@ -3,42 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta property="og:title" content="Recipe Book">
-        <meta property="og:type" content="website">
-        <meta property="og:description" content="A collection of delicious recipes.">
-        <meta property="og:image" content="images/apple-crisp.jpg">
-        <meta property="og:url" content="https://yourwebsite.com/recipes">
-        <meta name="twitter:card" content="summary_large_image">
         <title>Recipe Book</title>
-        <link rel="icon" href="images/recipebook.png" type="image/png">
         <link rel="stylesheet" href="recipes.css">
-        <script type="module" src="main.js" defer></script>
     </head>
     <body>
+
         <header>
-            <img src="images/recipe-book.png" alt="Recipe Book Logo">
-            <h1>RecipeBook</h1>
+            <h1>Recipebook</h1>
+            <!-- Search bar -->
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search recipes...">
+                <button id="search-btn">Search</button>
+            </div>
         </header>
 
-        <main>
-            <section class="search-bar">
-                <input type="text" id="search" placeholder="Find a recipe">
-                <button id="clear-search">✖</button>
-            </section>
+        <!-- Container to display the random recipe or list of recipes -->
+        <div id="recipe-container"></div>
 
-            <section id="recipe-list" class="recipe-list">
-                <!-- Recipes will be dynamically added here by JavaScript -->
-            </section>
-        </main>
-
-        <footer>
-            <p>©2025</p>
-            <div class="social">
-                <a href="#"><img src="images/instagram_icon.svg" alt="Instagram"></a>
-                <a href="#"><img src="images/youtube_icon.svg" alt="YouTube"></a>
-                <a href="#"><img src="images/pinterest_icon.svg" alt="Pinterest"></a>
-            </div>
-            <small><a class="credit" href="https://www.flaticon.com/free-icons/recipe">icons created by Freepik - Flaticon</a></small>
-        </footer>
+        <script src="main.js" type="module"></script>
     </body>
 </html>

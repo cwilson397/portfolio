@@ -1,50 +1,71 @@
 import recipes from './recipes.mjs';
 
-document.addEventListener("DOMContentLoaded", () => {
-    const searchInput = document.getElementById("search");
-    const clearButton = document.getElementById("clear-search");
-    const recipeList = document.getElementById("recipe-list");
+function random(num) {
+    return Math.floor(Math.random() * num);
+}
 
-    // Function to display recipes
-    const displayRecipes = (recipesArray) => {
-        recipeList.innerHTML = ''; // Clear previous content
-        recipesArray.forEach(recipe => {
-            const recipeElement = document.createElement('div');
-            recipeElement.classList.add('recipe-item'); // Add a class for styling
+function getRandomListEntry(list) {
+    return list[random(list.length)];
+}
 
-            recipeElement.innerHTML = `
-                <img src="${recipe.image}" alt="${recipe.name}">
-                <div class="recipe-info">
-                    <h3>${recipe.name}</h3>
-                    <p>${recipe.description}</p>
-                    <div class="tags">
-                        ${recipe.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                    </div>
-                    <div class="rating" role="img" aria-label="Rating: ${recipe.rating} out of 5 stars">
-                        ${'⭐'.repeat(recipe.rating)}${'☆'.repeat(5 - recipe.rating)}
-                    </div>
-                </div>
-            `;
-            recipeList.appendChild(recipeElement);
-        });
-    };
+function tagsTemplate(tags) {
+    return tags.map(tag => `<li>${tag}</li>`).join('');
+}
 
-    // Display all recipes initially
-    displayRecipes(recipes);
+function ratingTemplate(rating) {
+    let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
+    for (let i = 1; i <= 5; i++) {
+        html += `<span aria-hidden="true" class="icon-star">${i <= rating ? '⭐' : '☆'}</span>`;
+    }
+    html += `</span>`;
+    return html;
+}
 
-    // Clear the search input when the clear button is clicked
-    clearButton.addEventListener("click", () => {
-        searchInput.value = "";
-        displayRecipes(recipes); // Show all recipes when search is cleared
-    });
+function recipeTemplate(recipe) {
+    return `<figure class="recipe">
+        <img src="${recipe.image}" alt="image of ${recipe.name}" />
+        <figcaption>
+            <ul class="recipe__tags">
+                ${tagsTemplate(recipe.tags)}
+            </ul>
+            <h2><a href="#">${recipe.name}</a></h2>
+            <p class="recipe__ratings">
+                ${ratingTemplate(recipe.rating)}
+            </p>
+            <p class="recipe__description">
+                ${recipe.description}
+            </p>
+        </figcaption>
+    </figure>`;
+}
 
-    // Filter recipes based on search input
-    searchInput.addEventListener("input", () => {
-        const searchTerm = searchInput.value.toLowerCase();
-        const filteredRecipes = recipes.filter(recipe =>
-            recipe.name.toLowerCase().includes(searchTerm) || 
-            recipe.description.toLowerCase().includes(searchTerm)
-        );
-        displayRecipes(filteredRecipes);
-    });
-});
+function renderRecipes(recipeList) {
+    const recipeContainer = document.querySelector('#recipe-container');
+    recipeContainer.innerHTML = recipeList.map(recipe => recipeTemplate(recipe)).join('');
+}
+
+function init() {
+    const recipe = getRandomListEntry(recipes);
+    renderRecipes([recipe]);
+}
+
+function filterRecipes(query) {
+    return recipes.filter(recipe => 
+        recipe.name.toLowerCase().includes(query) ||
+        recipe.description.toLowerCase().includes(query) ||
+        recipe.tags.some(tag => tag.toLowerCase().includes(query)) ||
+        (recipe.ingredients && recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(query)))
+    ).sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function searchHandler(e) {
+    e.preventDefault();
+    const query = document.querySelector('#search-input').value.toLowerCase();
+    const filteredRecipes = filterRecipes(query);
+    renderRecipes(filteredRecipes);
+}
+
+document.querySelector('#search-btn').addEventListener('click', searchHandler);
+
+// Initialize the page with a random recipe
+init();
