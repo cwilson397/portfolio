@@ -49,8 +49,8 @@ def print_coupon(order_items):
         print("\nNo products ordered. No coupon available.\n")
 
 def main():
-    filename = "products.csv"
-    request_filename = "request.csv"
+    filename = "C:/Users/jedic/Documents/wdd130 workspace/.venv/CSE 111/week 9/products.csv"
+    request_filename = "C:/Users/jedic/Documents/wdd130 workspace/.venv/CSE 111/week 9/request.csv"
     
     try:
         products_dict = read_dictionary(filename, 0)
