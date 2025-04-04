@@ -15,7 +15,7 @@ export const blogPosts = [
         title: "Computer Consulting Services",
         excerpt: "Not sure what you need? Facing a tech issue you can't solve?",
         excerpt2: "Our experts offer clear, personalized advice to help you make the right decision.",
-        image: "Consulting.jpg"
+        image: "consulting.jpg"
     }
 ];
 
