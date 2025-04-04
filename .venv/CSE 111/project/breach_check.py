@@ -17,7 +17,7 @@ def is_breached(password: str) -> bool:
         bool: True if the password has been breached, False otherwise.
     """
     try:
-        # Hashes the password
+        # Hashes the password using SHA1
         sha1_password = hashlib.sha1(password.encode('utf-8')).hexdigest().upper()
 
         # Gets the first 5 characters of the SHA-1 hash
@@ -25,16 +25,21 @@ def is_breached(password: str) -> bool:
 
         # Makes the request with a timeout of 5 seconds
         url = f"https://api.pwnedpasswords.com/range/{prefix}"
-        response = requests.get(url, timeout=8)
+        response = requests.get(url, timeout=5)
 
-        # Checks if successful
+        # If the request is successful, check if the suffix is in the response
         if response.status_code == 200:
+            # The API returns a list of hash suffixes
             suffix = sha1_password[5:]
-            return suffix in response.text
-        else:
-            return False
+
+            # Check if the suffix is present in the response text (matching the case)
+            return any(suffix == line.split(":")[0] for line in response.text.splitlines())
+
+        # If the response code is not 200, return False
+        return False
+
     except requests.exceptions.RequestException as e:
-        # Catching request-specific exceptions
+        # Catching request-specific exceptions (e.g., network errors)
         print(f"An error occurred while making the request: {e}")
         return False
     except Exception as e:

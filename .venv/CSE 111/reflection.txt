@@ -1,0 +1,17 @@
+Please respond thoroughly (at least two sentences for each question) to
+the following three questions.
+
+1. Describe an experience you had this semester where you saw the power of
+functions.
+
+This semester, when creating my fortipass program, I realized that through splitting up functions, it allowed me to actually write less code, where as before I wouldve ended up making this a very long program, it ended up being really short because of the reusability of the code.
+
+
+2. In your judgment, what is the value of test functions?
+
+It allows you to find errors easily, and figure out exactly where a failure is occuring if enough are written. I actually found one in my program this past week. 
+
+3. Describe your process for troubleshooting and fixing a program that
+has a problem. What is one thing you can do to improve your process?
+Honestly my process is finding the line where it says the error is and trying to figure out the error code, I could maybe use tools to find the errors faster, but I honestly don't know if I have a speciifc process. I need to create one. 
+
